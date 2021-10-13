@@ -12,9 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-resource "google_storage_bucket" "private_bucket" {
-  name          = "gcs_yk_terraform_test_prod"
-  project       = "$PROJECT_ID"
-  location      = "asia"
-  force_destroy = true
-}
+#resource "google_storage_bucket" "private_bucket" {
+#  name          = "gcs_yk_terraform_test_prod"
+#  project       = "yk-terraform-test"
+#  location      = "asia"
+#  force_destroy = true
+#}

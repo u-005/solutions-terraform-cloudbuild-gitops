@@ -12,9 +12,13 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-
-resource "google_storage_bucket" "gcs-yk-terraform-test-prod" {
+resource "google_storage_bucket" "private-bucket" {
   name          = "gcs-yk-terraform-test-prod"
-  location      = "us-central1"
-  storage_class = "NEARLINE"
+  location      = "asia-northeast1"
+  storage_class = "REGIONAL"
+
+  labels = {
+    app = "test-app"
+    env = "test"
+  }
 }

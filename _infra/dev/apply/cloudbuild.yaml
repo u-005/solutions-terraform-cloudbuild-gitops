@@ -24,6 +24,15 @@ steps:
         echo "$BRANCH_NAME"
         echo "***********************"
 
+  - id: 'tf init'
+    name: 'hashicorp/terraform:1.0.0'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd _infra/dev/resource
+        terraform init
+
   # [START tf-apply]
   - id: 'tf apply'
     name: 'hashicorp/terraform:1.0.0'

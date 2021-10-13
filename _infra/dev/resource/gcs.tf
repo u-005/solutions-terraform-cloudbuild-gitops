@@ -16,7 +16,7 @@
 
 resource "google_storage_bucket" "private_bucket" {
   name          = "gcs_yk_terraform_test_dev"
-  project       = "${PROJECT_ID}"
+  project       = "$PROJECT_ID"
   location      = "asia"
   force_destroy = true
 }

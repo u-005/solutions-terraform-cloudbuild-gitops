@@ -37,17 +37,6 @@ steps:
         cd _infra/dev/resource
         terraform init
 
-# [START tf-fmt]
-  - id: 'tf plan'
-    name: 'hashicorp/terraform:1.0.0'
-    entrypoint: 'sh'
-    args:
-      - '-c'
-      - |
-        cd _infra/dev/resource
-        terraform plan
-# [END tf-plan]
-
 # [START tf-plan]
   - id: 'tf plan'
     name: 'hashicorp/terraform:1.0.0'

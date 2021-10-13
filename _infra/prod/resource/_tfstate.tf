@@ -13,8 +13,9 @@
 # limitations under the License.
 
 
-resource "google_storage_bucket" "gcs-yk-terraform-test-dev" {
-  name          = "gcs-yk-terraform-test-dev"
-  location      = "us-central1"
-  storage_class = "NEARLINE"
+terraform {
+  backend "gcs" {
+    bucket = "yk-terraform-test-tfstate"
+    prefix = "env/prod"
+  }
 }

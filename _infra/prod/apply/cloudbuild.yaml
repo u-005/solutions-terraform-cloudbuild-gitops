@@ -21,10 +21,23 @@ steps:
       - '-c'
       - |
         echo "***********************"
+        echo "infra prod apply"
+        echo "$PROJECT_ID"
+        echo "$REPO_NAME"
         echo "$BRANCH_NAME"
+        echo "$TAG_NAME"
         echo "***********************"
 
-  # [START tf-apply]
+  - id: 'tf init'
+    name: 'hashicorp/terraform:1.0.0'
+    entrypoint: 'sh'
+    args:
+      - '-c'
+      - |
+        cd _infra/prod/resource
+        terraform init
+
+# [START tf-apply]
   - id: 'tf apply'
     name: 'hashicorp/terraform:1.0.0'
     entrypoint: 'sh'

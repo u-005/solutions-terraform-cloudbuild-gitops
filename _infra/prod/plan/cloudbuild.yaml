@@ -21,7 +21,11 @@ steps:
       - '-c'
       - |
         echo "***********************"
+        echo "infra prod plan"
+        echo "$PROJECT_ID"
+        echo "$REPO_NAME"
         echo "$BRANCH_NAME"
+        echo "$TAG_NAME"
         echo "***********************"
 
   - id: 'tf init'

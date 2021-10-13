@@ -14,9 +14,9 @@
 
 
 
-resource "google_storage_bucket" "private_bucket" {
-  name          = "gcs_yk_terraform_test_dev"
-  project       = "yk-terraform-test"
-  location      = "asia"
-  force_destroy = true
-}
+#resource "google_storage_bucket" "private_bucket" {
+#  name          = "gcs_yk_terraform_test_dev"
+#  project       = "yk-terraform-test"
+#  location      = "asia"
+#  force_destroy = true
+#}

@@ -16,28 +16,23 @@
 steps:
 - id: 'branch name'
   name: 'alpine'
-  entrypoint: 'sh'  
-  args: 
+  entrypoint: 'sh'
+  args:
   - '-c'
-  - | 
-      echo "APPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPPAPP"
-      echo "***********************"
-      echo "$BRANCH_NAME"
-      echo "***********************"
+  - |
+    echo "***********************"
+    echo "$PROJECT_ID"
+    echo "$REPO_NAME"
+    echo "$BRANCH_NAME"
+    echo "$TAG_NAME"
+    echo "***********************"
 
 # [START tf-apply]
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
-  args: 
+  args:
   - '-c'
-  - | 
-      if [ -d "environments/$BRANCH_NAME/" ]; then
-        cd environments/$BRANCH_NAME      
-        terraform apply -auto-approve
-      else
-        echo "***************************** SKIPPING APPLYING *******************************"
-        echo "Branch '$BRANCH_NAME' does not represent an oficial environment."
-        echo "*******************************************************************************"
-      fi
-# [END tf-apply]      
+  - |
+    echo "app_dev_tf_apply_section"
+# [END tf-apply]

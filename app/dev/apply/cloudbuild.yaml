@@ -27,12 +27,19 @@ steps:
     echo "$TAG_NAME"
     echo "***********************"
 
-# [START tf-apply]
+- id: 'tf init'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+    echo "[init] dev_app_tf"
+
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
   args:
   - '-c'
   - |
-    echo "app_dev_tf_apply_section"
-# [END tf-apply]
+    cd _app/dev/resource
+    echo "[apply] dev_app_tf"

@@ -21,7 +21,6 @@ steps:
   - '-c'
   - |
       echo "***********************"
-      echo "infra dev apply"
       echo "$PROJECT_ID"
       echo "$REPO_NAME"
       echo "$BRANCH_NAME"

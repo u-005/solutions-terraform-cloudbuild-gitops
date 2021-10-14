@@ -27,12 +27,26 @@ steps:
     echo "$TAG_NAME"
     echo "***********************"
 
-# [START tf-apply]
+- id: 'tf init'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+    echo "[init] prd_app_tf"
+
+- id: 'tf plan'
+  name: 'hashicorp/terraform:1.0.0'
+  entrypoint: 'sh'
+  args:
+  - '-c'
+  - |
+    echo "[plan] prd_app_tf"
+
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
   entrypoint: 'sh'
   args:
   - '-c'
   - |
-    echo "app_prod_tf_apply_section"
-# [END tf-apply]
+    echo "[apply] prd_app_tf"

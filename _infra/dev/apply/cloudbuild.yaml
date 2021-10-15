@@ -29,7 +29,7 @@ steps:
   args:
   - '-c'
   - |
-    echo "[plan] prd_infra_tf"
+    echo "[plan] dev_infra_tf"
 
 - id: 'tf apply'
   name: 'hashicorp/terraform:1.0.0'
@@ -37,5 +37,4 @@ steps:
   args:
   - '-c'
   - |
-    cd _infra/dev/resource
     echo "[apply] dev_infra_tf"
